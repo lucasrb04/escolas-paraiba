@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Observatório Paraibano das Escolas do Campo</title>
+  <meta name="description" content="O fechamento das escolas do campo na Paraíba entre 2007 e 2025 e seus impactos nos territórios da Reforma Agrária.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="topnav" aria-label="Seções">
+  <a class="topnav-brand" href="#topo">Observatório das Escolas do Campo · PB</a>
+  <div class="topnav-links">
+    <a href="#problema">O problema</a>
+    <a href="#numeros">Os números</a>
+    <a href="#redes">Redes</a>
+    <a href="#tempo">Ritmo</a>
+    <a href="#territorio">Território</a>
+    <a href="#reforma">Reforma Agrária</a>
+    <a href="#mapa">Mapa</a>
+    <a href="#metodologia">Metodologia</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="col">
+    <p class="kicker">Pesquisa PIBIC 2026–2027 · Universidade Federal da Paraíba</p>
+    <h1>Onde a escola fecha, o território se desfaz</h1>
+    <p class="dek">
+      Entre 2007 e 2025, a Paraíba perdeu mais da metade das suas escolas do campo.
+      Este relatório reúne os dados do Censo Escolar para mostrar quanto, quando, onde
+      e de que forma esse processo aconteceu, e o que ele significa para os
+      assentamentos da Reforma Agrária.
+    </p>
+  </div>
+  <div class="hero-figures">
+    <div class="hero-fig">
+      <span class="hero-num">3.887</span>
+      <span class="hero-lbl">escolas do campo em funcionamento em 2007</span>
+    </div>
+    <div class="hero-arrow" aria-hidden="true">→</div>
+    <div class="hero-fig">
+      <span class="hero-num">1.638</span>
+      <span class="hero-lbl">escolas do campo em funcionamento em 2025</span>
+    </div>
+    <div class="hero-fig hero-fig--accent">
+      <span class="hero-num">−57,9%</span>
+      <span class="hero-lbl">2.249 escolas a menos em 18 anos</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================================================== O PROBLEMA -->
+  <section class="section" id="problema">
+    <div class="col">
+      <p class="section-num">01</p>
+      <h2>O problema: não é só um prédio que fecha</h2>
+      <p>
+        A <strong>Educação do Campo</strong> se consolidou no Brasil a partir das lutas dos movimentos
+        sociais camponeses, em especial do Movimento dos Trabalhadores Rurais Sem Terra (MST). Ela afirma
+        que os povos do campo têm o direito de serem educados <em>no</em> lugar onde vivem e
+        <em>a partir</em> da sua realidade, em contraste com a antiga "educação rural", que apenas
+        transplantava o modelo urbano para o meio rural (CALDART et al., 2012).
+      </p>
+      <p>
+        Nessa perspectiva, a escola do campo é mais do que uma unidade administrativa. Ela é espaço de
+        produção de saberes, de vínculo comunitário, de memória e de projetos de futuro, e uma das condições
+        para que as famílias permaneçam na terra (ARROYO, 2012; HAGE, 2014).
+      </p>
+      <blockquote class="pull">
+        Quando uma escola do campo é fechada, o que se interrompe é uma rede de relações sociais
+        construída pela comunidade ao longo de gerações.
+      </blockquote>
+      <p>
+        O fechamento costuma ser justificado por argumentos técnicos: queda de matrículas, custo por aluno,
+        racionalização da rede. Por meio da <strong>nucleação</strong>, alunos de várias comunidades são
+        concentrados em escolas maiores, muitas vezes na sede do município. A literatura, porém, mostra que o
+        processo está ligado à concentração fundiária, à expansão do agronegócio e a uma gestão educacional
+        orientada pelo custo (MESQUITA; ROCHA, 2019). Seus efeitos incluem longos deslocamentos diários,
+        evasão e perda do vínculo entre escola e comunidade (HAGE, 2014).
+      </p>
+      <p>
+        É o que Haesbaert (2004) chama de <strong>desterritorialização</strong>: não apenas a perda física
+        do espaço, mas o enfraquecimento dos laços sociais, culturais e identitários que ligam as pessoas ao
+        seu território. Nos assentamentos da Reforma Agrária, onde a escola costuma ser uma conquista da
+        própria comunidade organizada, esse efeito ganha peso político.
+      </p>
+      <div class="question">
+        <span class="question-lbl">Pergunta da pesquisa</span>
+        Quais os impactos da política de fechamento das escolas do/no campo nos territórios da Reforma
+        Agrária, no estado da Paraíba?
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== OS NÚMEROS -->
+  <section class="section" id="numeros">
+    <div class="col">
+      <p class="section-num">02</p>
+      <h2>O campo perde escolas enquanto a cidade ganha</h2>
+      <p>
+        Em 2007 havia <strong>3.887</strong> escolas do campo em funcionamento na Paraíba. Em 2025 eram
+        <strong>1.638</strong>, uma redução de <strong>57,9%</strong>. A queda foi contínua: o número de escolas
+        do campo em funcionamento diminuiu em todos os 18 anos da série, sem nenhuma recuperação.
+      </p>
+      <p>
+        No mesmo período, as escolas <strong>urbanas</strong> em funcionamento passaram de 2.592 para 2.998,
+        um <strong>aumento de 15,7%</strong>. Isso não prova que cada aluno foi transferido para a cidade,
+        mas mostra que a retração da rede é um fenômeno específico do campo, e não uma redução geral da
+        educação básica no estado.
+      </p>
+    </div>
+
+    <div class="col-wide">
+      <div class="stat-row">
+        <div class="stat-tile">
+          <span class="stat-num">−57,9%</span>
+          <span class="stat-lbl">escolas do campo em funcionamento, 2007–2025</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-num">+15,7%</span>
+          <span class="stat-lbl">escolas urbanas em funcionamento no mesmo período</span>
+        </div>
+        <div class="stat-tile">
+          <span class="stat-num">−36,5%</span>
+          <span class="stat-lbl">só na última década (2015–2025): 942 escolas</span>
+        </div>
+      </div>
+
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Escolas em funcionamento na Paraíba, por localização</span>
+          <span class="fig-sub">Número de escolas com situação "em atividade" no Censo Escolar, 2007–2025</span>
+        </figcaption>
+        <div class="chart" id="chart-rural-urbano"></div>
+        <p class="fig-source">Fonte: INEP, Censo Escolar 2007–2025. Elaboração própria.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================================================== REDES -->
+  <section class="section" id="redes">
+    <div class="col">
+      <p class="section-num">03</p>
+      <h2>A rede municipal responde por 89% das perdas</h2>
+      <p>
+        As escolas do campo paraibanas são, em sua imensa maioria, <strong>municipais</strong>: eram 92% do
+        total em 2007. Por isso, foi nos municípios que a retração pesou mais em números absolutos. As redes
+        municipais fecharam <strong>2.008</strong> das 2.249 escolas perdidas, uma queda de
+        <strong>56,2%</strong> (de 3.575 para 1.567).
+      </p>
+      <p>
+        Proporcionalmente, porém, a <strong>rede estadual</strong> foi a mais atingida: passou de 302 para
+        64 escolas do campo, <strong>−78,8%</strong>. Mais da metade dessa perda aconteceu em um único
+        ano. Entre 2011 e 2012, o número de escolas estaduais rurais caiu de 282 para 136.
+      </p>
+    </div>
+    <div class="col-wide">
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Escolas do campo em funcionamento, por rede de ensino</span>
+          <span class="fig-sub">Comparação entre 2007 e 2025</span>
+        </figcaption>
+        <div class="chart" id="chart-redes"></div>
+        <p class="fig-source">Fonte: INEP, Censo Escolar 2007–2025. Rede federal (1 escola) e privada (9 → 6) omitidas por serem residuais.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================================================== TEMPO -->
+  <section class="section" id="tempo">
+    <div class="col">
+      <p class="section-num">04</p>
+      <h2>Primeiro se paralisa, depois se extingue</h2>
+      <p>
+        A maior parte das escolas não desaparece de uma vez. No Censo Escolar, uma escola pode estar
+        <em>em atividade</em>, <em>paralisada</em> (sem funcionar, mas ainda cadastrada) ou
+        <em>extinta</em>. Ao acompanhar cada escola ano a ano, vemos um padrão: ela deixa de funcionar,
+        fica anos como paralisada e só depois é extinta formalmente.
+      </p>
+      <p>
+        Entre as escolas extintas depois de deixarem de funcionar, o intervalo mediano entre o último ano de
+        atividade e a extinção oficial foi de <strong>5 anos</strong>. Por isso, as extinções registradas
+        atingem o pico em <strong>2018 (376)</strong> e <strong>2019 (566)</strong>, bem depois dos anos de
+        maior perda de escolas em funcionamento (2012 e 2013).
+      </p>
+      <p>
+        A paralisação funciona, na prática, como a <strong>antessala do fechamento</strong>. Em 2025 ainda
+        havia <strong>495 escolas do campo paralisadas</strong> na Paraíba. É um estoque de escolas em
+        risco que merece acompanhamento permanente e pode ser alvo de mobilização pela reabertura. Isso é
+        possível: ao longo da série, <strong>178 escolas</strong> voltaram a funcionar depois de um período
+        inativas.
+      </p>
+    </div>
+    <div class="col-wide">
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Escolas do campo perdidas a cada ano</span>
+          <span class="fig-sub">Redução líquida de escolas em funcionamento em relação ao ano anterior</span>
+        </figcaption>
+        <div class="chart" id="chart-perdas-ano"></div>
+      </figure>
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Escolas do campo paralisadas e extintas no Censo</span>
+          <span class="fig-sub">Registros com situação "paralisada" e "extinta no ano", 2011–2025. Antes de 2011 o Censo não registra essas situações.</span>
+        </figcaption>
+        <div class="chart" id="chart-paralisadas"></div>
+        <p class="fig-source">Fonte: INEP, Censo Escolar 2007–2025. Elaboração própria.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================================================== TERRITÓRIO -->
+  <section class="section" id="territorio">
+    <div class="col">
+      <p class="section-num">05</p>
+      <h2>Um fenômeno do interior</h2>
+      <p>
+        O fechamento não se distribui de forma homogênea. As mesorregiões do interior, a
+        <strong>Borborema (−70,4%)</strong> e o <strong>Sertão (−68,4%)</strong>, perderam mais de dois
+        terços das suas escolas do campo. No <strong>Agreste</strong> a perda foi de 51,6%. Na
+        <strong>Mata Paraibana</strong>, no litoral, foi de 23,2%.
+      </p>
+      <p>
+        Na escala municipal o quadro é ainda mais nítido. Dos 219 municípios que tinham escolas do campo em
+        2007, <strong>142 (65%) perderam pelo menos metade delas</strong>. Apenas 14 mantiveram ou ampliaram
+        sua rede rural. Em <strong>9 municípios</strong>, nenhuma escola do campo segue em funcionamento:
+        Igaracy, Nazarezinho, Santo André, São Domingos do Cariri, Nova Palmeira, Tenório, Prata, São
+        Sebastião do Umbuzeiro e São Bentinho.
+      </p>
+    </div>
+    <div class="col-wide grid-2">
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Perda de escolas do campo por mesorregião</span>
+          <span class="fig-sub">Variação das escolas em funcionamento, 2007–2025</span>
+        </figcaption>
+        <div class="chart" id="chart-meso"></div>
+      </figure>
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Municípios que mais perderam escolas do campo</span>
+          <span class="fig-sub">Escolas em funcionamento em 2007 e 2025</span>
+        </figcaption>
+        <div id="tabela-municipios"></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================================================== REFORMA AGRÁRIA -->
+  <section class="section" id="reforma">
+    <div class="col">
+      <p class="section-num">06</p>
+      <h2>Reforma Agrária: territórios que resistem?</h2>
+      <p>
+        A Paraíba tem <strong>278 projetos de assentamento</strong> registrados pelo INCRA, com cerca de
+        <strong>13 mil famílias</strong>, espalhados por <strong>95 municípios</strong>. O Censo Escolar
+        permite identificar as escolas que se declaram localizadas em <em>área de assentamento</em>:
+        245 escolas do campo tiveram essa marcação em algum momento da série.
+      </p>
+      <p>
+        Os dados indicam que essas escolas <strong>resistiram mais</strong> ao fechamento. As escolas em
+        funcionamento em área de assentamento passaram de 225 para 164, <strong>−27,1%</strong>, menos da
+        metade da queda estadual (−57,9%). Do mesmo modo, os municípios que têm assentamentos perderam
+        54,4% das escolas do campo, contra 61,0% nos municípios sem assentamentos.
+      </p>
+      <p>
+        Uma leitura possível é que a organização coletiva dos assentamentos, e a centralidade que a escola
+        tem para esses territórios, criaram resistência à nucleação. Mesmo assim, <strong>81 das 245
+        escolas</strong> em área de assentamento (33%) fecharam no período. Cada uma delas representa
+        uma comunidade da Reforma Agrária que perdeu sua escola.
+      </p>
+      <div class="caveat">
+        <strong>Cuidado na leitura.</strong> A marcação "área de assentamento" é declarada pela escola ao
+        Censo e pode mudar ao longo dos anos. Por isso, esses números indicam uma tendência, não uma
+        medida definitiva. Confirmar quais assentamentos perderam suas escolas é justamente o objetivo do
+        georreferenciamento e do trabalho de campo desta pesquisa.
+      </div>
+    </div>
+    <div class="col-wide">
+      <figure class="figure">
+        <figcaption>
+          <span class="fig-title">Escolas do campo em funcionamento, índice 2007 = 100</span>
+          <span class="fig-sub">Todas as escolas do campo comparadas às escolas em área de assentamento</span>
+        </figcaption>
+        <div class="chart" id="chart-assentamentos"></div>
+        <p class="fig-source">Fonte: INEP, Censo Escolar 2007–2025 (TP_LOCALIZACAO_DIFERENCIADA = 1). Elaboração própria.</p>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================================================== MAPA -->
+  <section class="section section--map" id="mapa">
+    <div class="col">
+      <p class="section-num">07</p>
+      <h2>Explore o mapa</h2>
+      <p>
+        Arraste a linha do tempo ou aperte ▶ para ver as escolas do campo desaparecendo ano a ano. Clique em
+        uma escola para ver sua trajetória, ou em um assentamento para comparar as escolas do município em
+        2007 e no ano escolhido.
+      </p>
+    </div>
+
+    <div class="map-shell">
+      <aside class="panel" id="sidebar">
+        <div class="panel-block stats" aria-live="polite">
+          <div class="stat-year">
+            <span class="label">Ano do Censo</span>
+            <span class="value" id="stat-ano">2007</span>
+          </div>
+          <div class="stat-grid">
+            <div class="stat"><span class="dot ativa"></span><span class="num" id="stat-ativas">–</span><span class="label">ativas</span></div>
+            <div class="stat"><span class="dot paralisada"></span><span class="num" id="stat-paralisadas">–</span><span class="label">paralisadas</span></div>
+            <div class="stat"><span class="dot fechada"></span><span class="num" id="stat-fechadas">–</span><span class="label">fechadas desde 2007</span></div>
+          </div>
+          <p class="variacao" id="stat-variacao"></p>
+          <div class="mini-chart" id="chart" aria-label="Escolas do campo ativas por ano"></div>
+        </div>
+
+        <div class="panel-block">
+          <h3>Linha do tempo</h3>
+          <div class="timeline">
+            <button type="button" class="btn-play" id="btn-play" aria-label="Reproduzir animação">▶</button>
+            <input type="range" id="slider-ano" min="2007" max="2025" step="1" value="2007" aria-label="Ano">
+          </div>
+          <div class="ticks"><span>2007</span><span>2016</span><span>2025</span></div>
+        </div>
+
+        <div class="panel-block">
+          <h3>Camadas</h3>
+          <label class="toggle"><input type="checkbox" id="lyr-escolas" checked> Escolas do campo</label>
+          <div class="sub">
+            <label class="toggle"><input type="checkbox" id="flt-fechadas" checked> Mostrar escolas fechadas</label>
+            <label class="toggle"><input type="checkbox" id="flt-assentamento"> Somente em área de assentamento</label>
+            <label class="field">Rede
+              <select id="flt-rede">
+                <option value="">Todas</option>
+                <option value="3">Municipal</option>
+                <option value="2">Estadual</option>
+                <option value="1">Federal</option>
+                <option value="4">Privada</option>
+              </select>
+            </label>
+          </div>
+          <label class="toggle"><input type="checkbox" id="lyr-assentamentos" checked> Assentamentos (INCRA)</label>
+          <label class="toggle"><input type="checkbox" id="lyr-regioes" checked> Municípios</label>
+          <div class="sub">
+            <label class="field">Colorir por
+              <select id="sel-regioes">
+                <option value="perda">Perda de escolas desde 2007</option>
+                <option value="mesorregiao">Mesorregião (IBGE)</option>
+                <option value="nenhum">Somente contorno</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="panel-block">
+          <h3>Legenda</h3>
+          <ul class="legend">
+            <li><span class="dot ativa"></span> Ativa</li>
+            <li><span class="dot paralisada"></span> Paralisada</li>
+            <li><span class="dot fechada"></span> Fechada (extinta ou fora do Censo)</li>
+            <li><span class="dot reclass"></span> Ativa, reclassificada como urbana</li>
+            <li><span class="swatch assent"></span> Assentamento (INCRA)</li>
+            <li><span class="swatch assent-mst"></span> Assentamento vinculado ao MST</li>
+          </ul>
+          <div id="legend-regioes"></div>
+          <p class="note" id="nota-coordenadas"></p>
+        </div>
+      </aside>
+
+      <div class="map-wrap">
+        <div id="map" role="region" aria-label="Mapa das escolas do campo da Paraíba"></div>
+        <div class="loading" id="loading">Carregando dados…</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== METODOLOGIA -->
+  <section class="section" id="metodologia">
+    <div class="col">
+      <p class="section-num">08</p>
+      <h2>Metodologia e fontes</h2>
+      <h3>Base de dados</h3>
+      <p>
+        Os dados de escolas vêm dos <strong>microdados do Censo Escolar da Educação Básica (INEP)</strong>
+        de 2007 a 2025, sistematizados na planilha <em>Levantamento de dados</em> do projeto. Considera-se
+        <strong>escola do campo</strong> aquela com localização rural (<code>TP_LOCALIZACAO = 2</code>), e
+        <strong>em funcionamento</strong> aquela com <code>TP_SITUACAO_FUNCIONAMENTO = 1</code>. Os totais
+        por ano e por rede coincidem com a aba <em>ANÁLISES</em> da planilha.
+      </p>
+      <h3>Trajetória de cada escola</h3>
+      <p>
+        Cada escola foi acompanhada pelo seu código INEP ao longo dos 19 anos. O <strong>ano de
+        fechamento</strong> é o primeiro ano após o último registro como escola rural em atividade. Escolas
+        que nunca aparecem em funcionamento na série (856 cadastros que só
+        constam como paralisados ou extintos) não entram no mapa nem nas contagens de fechamento.
+      </p>
+      <h3>Território e Reforma Agrária</h3>
+      <p>
+        A relação com a Reforma Agrária usa duas fontes independentes: a variável
+        <code>TP_LOCALIZACAO_DIFERENCIADA = 1</code> do Censo Escolar (escola em área de assentamento) e os
+        perímetros dos projetos de assentamento do <strong>INCRA</strong>. Divisões regionais e limites
+        municipais são do <strong>IBGE</strong>.
+      </p>
+      <h3>Limitações</h3>
+      <ul>
+        <li>
+          A planilha não traz coordenadas das escolas. No mapa, cada escola aparece em um ponto
+          aproximado dentro do seu município, até que as coordenadas do Catálogo de Escolas do INEP
+          sejam incorporadas.
+        </li>
+        <li>
+          A base do INCRA não informa o vínculo dos assentamentos com o MST. Essa informação será
+          acrescentada a partir do levantamento de campo.
+        </li>
+        <li>
+          Os números descrevem o fenômeno, mas não explicam suas causas por si sós. A interpretação exige
+          a análise documental e o trabalho de campo previstos na pesquisa.
+        </li>
+      </ul>
+      <h3>Fontes de dados</h3>
+      <ul class="refs">
+        <li>INSTITUTO NACIONAL DE ESTUDOS E PESQUISAS EDUCACIONAIS ANÍSIO TEIXEIRA (INEP). <em>Censo Escolar da Educação Básica</em>: microdados. Brasília, DF: INEP, 2007–2025.</li>
+        <li>INSTITUTO NACIONAL DE COLONIZAÇÃO E REFORMA AGRÁRIA (INCRA). <em>Assentamento Brasil – PB</em> [shapefile]. Disponível em: https://certificacao.incra.gov.br/csv_shp/export_shp.py. Acesso em: 29 set. 2026.</li>
+        <li>INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). <em>API de Malhas Geográficas e de Localidades</em>. Disponível em: https://servicodados.ibge.gov.br. Acesso em: 29 set. 2026.</li>
+      </ul>
+      <h3>Referências</h3>
+      <ul class="refs">
+        <li>ARROYO, Miguel G. <em>Outros sujeitos, outras pedagogias</em>. Petrópolis: Vozes, 2012.</li>
+        <li>CALDART, Roseli S. et al. (org.). <em>Dicionário da Educação do Campo</em>. Rio de Janeiro: EPSJV; São Paulo: Expressão Popular, 2012.</li>
+        <li>FERNANDES, Bernardo M. <em>Questão agrária</em>: conflitualidade e desenvolvimento territorial. São Paulo: Expressão Popular, 2008.</li>
+        <li>HAESBAERT, Rogério. <em>O mito da desterritorialização</em>. Rio de Janeiro: Bertrand Brasil, 2004.</li>
+        <li>HAGE, Salomão M. <em>Transgressão do paradigma da (multi)seriação</em>. Belém: UFPA, 2014.</li>
+        <li>MOLINA, Mônica C.; SÁ, Laís M. <em>Licenciaturas em Educação do Campo</em>. Belo Horizonte: Autêntica, 2011.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="col">
+    <strong>Observatório Paraibano das Escolas do Campo</strong><br>
+    Território, Reforma Agrária e Educação do Campo: fechamento de escolas rurais na Paraíba.
+    Pesquisa PIBIC 2026–2027, Universidade Federal da Paraíba.
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="charts.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
